@@ -1,0 +1,437 @@
+/* ---------------------------------------------------------------
+            RE-INITIALISATION DES TAGS HTML
+    Pour éviter les valeurs par défaut différentes suivant les 
+    navigateurs. Seuls les tags le plus souvent utilisés et non 
+    dépréciés sont pris en compte.
+    Reset complet : http://meyerweb.com/eric/tools/css/reset/
+--------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* ---------------------------------------------------------------
+    FEUILLE DE STYLE ORIGINALE  
+--------------------------------------------------------------- */
+body {
+    background: #20190f;
+    color: #e8dbb1;
+    font: 14px Verdana, Geneva, Sans-Serif;
+}
+
+main {
+    background: url(../images/fond.jpg);
+    margin: 0 auto;
+    width: 800px;
+    padding-bottom: 40px; 
+}
+    
+/* ---------------------------------------------------------------
+    BLOC ENTETE
+--------------------------------------------------------------- */
+header{
+    height: 270px;
+    position: relative;
+}
+
+#sessionON {
+    background: url(../images/entete.jpg) no-repeat;
+}
+
+#sessionOFF {
+    background: url(../images/entete_deconnecte.jpg) no-repeat;
+}
+
+/* Tous les éléments descendants de l'élément header sont positionnés en absolu.
+ * Comme l'élément header est en positionnement relatif, cet élément header est le bloc conteneur 
+ * de ses enfants.
+ * => au final, le bloc conteneur de chaque élément est son élément parent.
+ * (i.e. : chaque élément est positionné en absolu par rapport à son élément parent)
+ */ 
+header * {
+    position: absolute;
+}
+    
+header > a[title*=connecter] {
+    background: url(../images/deconnexion.png) no-repeat;
+    height: 73px;
+    left: 732px;
+    top: 14px;
+    width: 68px;
+}
+
+header > a[title*=connecter]:hover {
+    background: url(../images/deconnexion_over.png) no-repeat;  
+}
+    
+header > a[title*=accueil] {
+    background: url(../images/home.png) no-repeat;  
+    height: 44px;
+    left: 540px;
+    top: 84px;
+    width: 48px;
+}
+    
+header > a[title*=accueil]:hover {
+    background: url(../images/home_over.png) no-repeat; 
+}
+
+header > a[title*=cherche] {
+    background: url(../images/cherche.png) no-repeat;   
+    height: 40px;
+    left: 600px;
+    top: 86px;  
+    width: 44px;
+}
+    
+header > a[title*=cherche]:hover {
+    background: url(../images/cherche_over.png) no-repeat;  
+}
+
+header > a[title*=informations] {
+    background: url(../images/config.png) no-repeat;    
+    height: 40px;
+    left: 659px;
+    top: 87px;  
+    width: 44px;
+}
+    
+header > a[title*=informations]:hover {
+    background: url(../images/config_over.png) no-repeat;   
+}
+
+/* -- FORMULAIRE DE SAISIE MESSAGE -- */
+header form {
+    background: url(../images/saisie.png) no-repeat;
+    height: 142px;
+    left: 272px;
+    top: 127px;
+    width: 528px;
+}
+    
+header textarea {
+    background: #f5f4f4;
+    border: 1px solid #b4b3b3;
+    color: #7a370d;
+    height: 55px;
+    left: 45px;
+    overflow: hidden;
+    top: 26px;
+    width: 468px;
+    resize: none;
+}
+    
+textarea:focus, input:focus {
+    outline: none;
+}
+
+    
+header input[type=submit] {
+    background: url(../images/haut_parleur.png) no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 44px;
+    left: 457px;
+    top: 90px;
+    width: 52px;
+}
+    
+header input[type=submit]:hover {
+    background: url(../images/haut_parleur_over.png) no-repeat;
+}
+
+/* ---------------------------------------------------------------
+    BLOC INFOS
+--------------------------------------------------------------- */
+aside {
+    background: url(../images/micro.jpg) no-repeat;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    float: left;
+    padding-left: 15px;
+    width: 235px;
+    min-height: 450px;
+    margin-bottom: 30px;
+    color: #efe7de;
+}
+    
+aside h3 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 16px;
+}
+        
+aside img {
+    height: 50px;
+    margin: 0 4px 4px 0;
+    vertical-align: middle;
+    width: 50px;
+}
+
+aside a{
+    font-weight: bold;
+}
+/* ---------------------------------------------------------------
+    BLOC MESSAGES
+--------------------------------------------------------------- */
+.bcMessages {
+    margin: 20px 0 0 0;
+}
+    
+.bcMessages li:not(:last-of-type) {
+    background: url(../images/fond_blabla.png);
+    margin: 0 0 10px 25px;
+    padding: 5px 5px 5px 35px;
+    border-radius: 5px;
+}
+    
+.imgAuteur {
+    float: left;
+    height: 50px;
+    margin-left: -60px;
+    margin-top: 5px;
+    width: 50px;
+}
+
+.finMessage{
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.finMessage a {
+    float: right;
+    margin-left: 20px;
+    width: auto;
+    opacity: 0.6;
+}
+
+.finMessage a:hover {
+    opacity: 1;
+}
+    
+.bcMessages li:last-of-type {
+    text-align: right;
+}
+
+.bcMessages li:last-of-type img{
+    vertical-align:middle;
+    margin-left: 5px;
+}
+
+a {
+    color: #3c96f1;
+    text-decoration: none;
+}
+    
+a:hover {
+    text-decoration: underline;
+}
+    
+strong {
+    font-weight: bold;
+}
+/* ---------------------------------------------------------------
+    BLOC PIED DE PAGE
+--------------------------------------------------------------- */
+footer{
+    background: url(../images/pied.png) no-repeat;
+    clear: both;
+    height: 65px;
+    margin-top: 20px;
+    text-align: center; 
+}
+
+footer a {
+    margin: 0 10px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+    
+footer a:hover {
+    opacity: 1;
+}
+
+header h1{
+    position : absolute;
+    top : 165px;
+    left: 200px;
+    color : #be7e11;
+    font-weight: bold;
+    font-size: 28px;
+    background: url(../images/trait.png) bottom no-repeat;
+    height : 40px;
+    width : 599px;
+    text-align: end;
+    
+}
+
+/* ---------------------------------------------------------------
+    BLOC PAGE COMPTE
+--------------------------------------------------------------- */
+
+form h1{
+    color : #efe7de;
+    font-weight: bold;
+    border-bottom: 3px solid #e8dbb1;
+    text-align:start;
+    margin: 26px 0 0 0px;
+    
+}
+ #contenu{
+    margin-left: 250px;
+}
+
+#contenu h1{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#TextAreaCompte{
+    width: 300px;
+    height: 150px;
+    color: #7A370D;
+    resize: none;
+}
+
+.tdRadio{
+    width: 50px;
+}
+table input[type="radio"]{
+    width: 10px;
+}
+label[for=photoUse]{
+    margin-right: 10px;
+}
+
+#imgCompte{
+    width: 50px;
+    height: 50px;
+}
+
+/* ---------------------------------------------------------------
+    BLOC PAGE INSCRIPTION
+--------------------------------------------------------------- */
+
+table{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form td{
+    padding: 7px;
+}
+
+form table tr:nth-child(6) td:last-child input{
+    width: 125px;
+}
+
+form table tr:not(:last-child) td:first-child{
+    text-align: end;
+}
+
+table input{
+    color: #7A370D;
+    width: 250px;
+}
+
+table input#naissance{
+    width: 125px;
+}
+
+table input[type="submit"],input[type="reset"]{
+    background: url(../images/bouton.png);
+    width: 142px;
+    height: 42px;
+    border: none;
+    text-align: center;
+    padding-bottom: 5px;
+    margin: 0 20px;
+
+}
+
+table input[type="submit"]:hover,input[type="reset"]:hover{
+    background: url(../images/bouton_over.png);
+    font-weight: bold;
+    color:#3C96F1;
+}
+
+form table tr:last-child td {
+    text-align: center;
+}
+
+/* span pour les erreurs dans le formulaire */
+#errorIns{
+    margin: 30px 0 10px 0;
+    padding: 5px ;
+    color: rgb(173, 0, 0);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgb(173, 0, 0);
+    border-radius: 5px;
+}
+
+/* span pour les erreurs dans le formulaire */
+#NoErrorIns{
+    margin: 30px 0 10px 0;
+    padding: 5px ;
+    color: #0A0;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid #0A0;
+    border-radius: 5px;
+}
+
+.bcMessages li:not(:last-child) {
+    min-height:60px;
+}
+
+#blablaSansBG{
+    background: none !important;
+}
+
+.ulTendance{
+    margin-bottom: 20px;
+}
+
+.ulTendance li{
+    margin: 10px 0 0 30px;
+}
